@@ -21,7 +21,7 @@ h1 {
 
 /* Header */
 header {
-  height: 80px;
+  height: 60px;
   background-color: var(--color_quaternary);
 }
 
@@ -56,30 +56,16 @@ header img {
 
 /* Main */
 main {
-  height: calc(100% - 80px - 50px);
-  background-color: var(--color_quaternary_light);
-  position: relative;
+  height: calc(100% - 60px - 25px);
+  background-image: url(../img/img2.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .grid_container {
   display: grid;
   margin: 0 auto;
-}
-
-.img_start {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.img_start img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  filter: brightness(0.8);
 }
 
 .grid_container .cell {
@@ -102,6 +88,7 @@ main {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
+  color: var(--color_quaternary_light);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -110,6 +97,6 @@ main {
 
 /* Footer */
 footer {
-  height: 50px;
+  height: 25px;
   background-color: goldenrod;
 }
