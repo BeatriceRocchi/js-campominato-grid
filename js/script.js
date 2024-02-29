@@ -10,7 +10,7 @@ btnStart.addEventListener("click", function () {
   defineGridDimension(cellTotal);
 
   for (let i = 1; i <= cellTotal; i++) {
-    const cell = createCell(i);
+    const cell = createCell(i, cellTotal);
     gridContainer.append(cell);
   }
 });
@@ -39,7 +39,7 @@ function defineGridDimension(numberOfCells) {
   }
 }
 
-function createCell(index) {
+function createCell(index, totalNumberOfCells) {
   const cellElement = document.createElement("div");
   cellElement.className = "cell";
   cellElement._cellID = index;
@@ -53,7 +53,19 @@ function createCell(index) {
       : (this.innerHTML = "");
 
     this.classList.toggle("clicked");
+
+    // Check fine gioco
+    if (isEndGame() === totalNumberOfCells) {
+      console.log("Gioco terminato");
+      gridContainer.innerHTML = `
+      <div class="output">Hai terminato il gioco!</div>`;
+    }
   });
 
   return cellElement;
+}
+
+function isEndGame() {
+  const clickedCells = document.querySelectorAll(".clicked");
+  return clickedCells.length;
 }
