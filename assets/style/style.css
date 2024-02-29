@@ -67,7 +67,7 @@ main {
 }
 
 .img_start {
-  height: 90%;
+  height: 100%;
   width: 100%;
   position: absolute;
   top: 50%;
@@ -78,23 +78,23 @@ main {
 .img_start img {
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   filter: brightness(0.8);
 }
 
 .grid_container .cell {
   width: 50px;
   aspect-ratio: 1;
-  background-color: brown;
-  border: 1px solid white;
-  color: white;
+  background-color: var(--color_primary);
+  border: 1.5px solid var(--color_quaternary_light);
+  color: var(--color_dark);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .grid_container .cell.clicked {
-  background-color: orangered;
+  background-color: var(--color_quaternary);
 }
 
 .output {
