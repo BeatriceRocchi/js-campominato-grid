@@ -2,9 +2,6 @@ const btnStart = document.getElementById("btn_start");
 const gridContainer = document.querySelector(".grid_container");
 const gameLevel = document.getElementById("game-level");
 
-//Reset gioco
-reset();
-
 //Generazione griglia di gioco
 btnStart.addEventListener("click", function () {
   reset();

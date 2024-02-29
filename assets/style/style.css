@@ -1,22 +1,85 @@
+:root {
+  --color_primary: #771011;
+  --color_secondary: #f26823;
+  --color_tertiary: #f58d22;
+  --color_quaternary: #daa520;
+  --color_quaternary_light: #ffe4c4;
+  --color_dark: #323232;
+}
+
 body {
   height: 100vh;
+  font-family: "Roboto", sans-serif;
+  color: var(--color_dark);
+}
+
+h1 {
+  font-size: 1.6rem;
+  padding-left: 20px;
+  margin: 0;
 }
 
 /* Header */
 header {
   height: 80px;
-  background-color: goldenrod;
+  background-color: var(--color_quaternary);
+}
+
+header img {
+  height: 80%;
+  border-radius: 10px;
+}
+
+.commands_box #game-level {
+  background-color: var(--color_quaternary_light);
+  font-size: 0.9rem;
+  border-radius: 6px;
+  padding: 4px;
+  margin: 0 20px 0 10px;
+  cursor: pointer;
+}
+
+.commands_box .btn_custom {
+  background-color: var(--color_primary);
+  color: var(--color_quaternary_light);
+}
+
+.commands_box #game-level:hover,
+.commands_box .btn_custom:hover {
+  box-shadow: 0 0 10px var(--color_dark);
+}
+
+.commands_box .btn_custom:hover {
+  background-color: var(--color_secondary);
+  color: var(--color_dark);
 }
 
 /* Main */
 main {
   height: calc(100% - 80px - 50px);
-  background-color: bisque;
+  background-color: var(--color_quaternary_light);
+  position: relative;
 }
 
 .grid_container {
   display: grid;
   margin: 0 auto;
+}
+
+.img_start {
+  height: 90%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img_start img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  filter: brightness(0.8);
 }
 
 .grid_container .cell {
@@ -39,9 +102,3 @@ footer {
   height: 50px;
   background-color: goldenrod;
 }
-
-/* .griglia {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  background-color: lightcoral;
-} */
