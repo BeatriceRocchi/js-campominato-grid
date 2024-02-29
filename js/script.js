@@ -1,12 +1,17 @@
 const btnStart = document.getElementById("btn_start");
 const gridContainer = document.querySelector(".grid_container");
-const cellTotal = 100;
+const gameLevel = document.getElementById("game-level");
 
 //Reset gioco
 reset();
 
 //Generazione griglia di gioco
 btnStart.addEventListener("click", function () {
+  reset();
+
+  const cellTotal = countCellTotal(gameLevel.value);
+  defineGridDimension(cellTotal);
+
   for (let i = 1; i <= cellTotal; i++) {
     const cell = createCell(i);
     gridContainer.append(cell);
@@ -16,6 +21,25 @@ btnStart.addEventListener("click", function () {
 // ------ FUNCTIONS ------ //
 function reset() {
   gridContainer.innerHTML = "";
+}
+
+function countCellTotal(level) {
+  if (level === "easy") {
+    return 100;
+  } else if (level === "medium") {
+    return 81;
+  }
+  return 49;
+}
+
+function defineGridDimension(numberOfCells) {
+  if (numberOfCells === 100) {
+    gridContainer.style.gridTemplateColumns = "repeat(10, 1fr)";
+  } else if (numberOfCells === 81) {
+    gridContainer.style.gridTemplateColumns = "repeat(9, 1fr)";
+  } else if (numberOfCells === 49) {
+    gridContainer.style.gridTemplateColumns = "repeat(7, 1fr)";
+  }
 }
 
 function createCell(index) {

@@ -15,7 +15,7 @@ main {
 }
 
 .grid_container {
-  width: calc(10 * 50px);
+  display: grid;
   margin: 0 auto;
 }
 
@@ -39,3 +39,9 @@ footer {
   height: 50px;
   background-color: goldenrod;
 }
+
+/* .griglia {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  background-color: lightcoral;
+} */
