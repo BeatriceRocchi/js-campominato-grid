@@ -1,0 +1,37 @@
+body {
+  height: 100vh;
+}
+
+/* Header */
+header {
+  height: 80px;
+  background-color: goldenrod;
+}
+
+/* Main */
+main {
+  height: calc(100% - 80px - 50px);
+  background-color: bisque;
+}
+
+.grid_container {
+  width: calc(10 * 60px);
+  margin: 0 auto;
+}
+
+.grid_container .cell {
+  width: 60px;
+  aspect-ratio: 1;
+  background-color: brown;
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer */
+footer {
+  height: 50px;
+  background-color: goldenrod;
+}
