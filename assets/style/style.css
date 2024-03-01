@@ -61,15 +61,16 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .grid_container {
   display: grid;
+  width: 500px;
   margin: 0 auto;
 }
 
 .grid_container .cell {
-  width: 50px;
   aspect-ratio: 1;
   background-color: var(--color_primary);
   border: 1.5px solid var(--color_quaternary_light);

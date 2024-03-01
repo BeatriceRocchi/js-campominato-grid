@@ -1,13 +1,16 @@
 const btnStart = document.getElementById("btn_start");
 const gridContainer = document.querySelector(".grid_container");
-const gameLevel = document.getElementById("game-level");
+const levelSelected = document.getElementById("game-level");
+const levels = [100, 81, 49];
+
+let cellTotal;
 
 //Generazione griglia di gioco
 btnStart.addEventListener("click", function () {
   reset();
 
-  const cellTotal = countCellTotal(gameLevel.value);
-  defineGridDimension(cellTotal);
+  cellTotal = levels[levelSelected.value];
+  defineGridDimension();
 
   for (let i = 1; i <= cellTotal; i++) {
     const cell = createCell(i, cellTotal);
@@ -20,21 +23,12 @@ function reset() {
   gridContainer.innerHTML = "";
 }
 
-function countCellTotal(level) {
-  if (level === "easy") {
-    return 100;
-  } else if (level === "medium") {
-    return 81;
-  }
-  return 49;
-}
-
-function defineGridDimension(numberOfCells) {
-  if (numberOfCells === 100) {
+function defineGridDimension() {
+  if (cellTotal === levels[0]) {
     gridContainer.style.gridTemplateColumns = "repeat(10, 1fr)";
-  } else if (numberOfCells === 81) {
+  } else if (cellTotal === levels[1]) {
     gridContainer.style.gridTemplateColumns = "repeat(9, 1fr)";
-  } else if (numberOfCells === 49) {
+  } else if (cellTotal === levels[2]) {
     gridContainer.style.gridTemplateColumns = "repeat(7, 1fr)";
   }
 }
@@ -48,11 +42,7 @@ function createCell(index, totalNumberOfCells) {
     const cellNumber = this._cellID;
     console.log(cellNumber);
 
-    this.innerHTML = !this.classList.contains("clicked")
-      ? (this.innerHTML = cellNumber)
-      : (this.innerHTML = "");
-
-    this.classList.toggle("clicked");
+    this.classList.add("clicked");
 
     // Check fine gioco
     if (isEndGame() === totalNumberOfCells) {
